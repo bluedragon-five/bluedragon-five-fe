@@ -5,7 +5,7 @@ const VerifyPage = () => {
   const navigate = useNavigate(); // ✅ 네비게이션 함수 사용
 
   const handleEditClick = () => {
-    navigate("/main"); // ✅ 수정 버튼 클릭 시 '/main'으로 이동
+    navigate("/main"); // ✅ 확인 버튼 클릭 시 '/main'으로 이동
   };
 
   const formData = {
@@ -29,7 +29,7 @@ const VerifyPage = () => {
       <p><strong>재학 여부</strong>: <span className="highlight">{formData.enrollment}</span></p>
       <p><strong>학년</strong>: <span className="highlight">{formData.grade}</span></p>
 
-      {/* ✅ "수정" 버튼 클릭 시 즉시 /main 페이지로 이동 */}
+      {/* ✅ "확인" 버튼 클릭 시 즉시 /main 페이지로 이동 */}
       <button className="edit-button" onClick={handleEditClick}>확인</button>
     </div>
   );
