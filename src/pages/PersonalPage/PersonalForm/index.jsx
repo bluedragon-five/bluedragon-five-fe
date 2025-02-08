@@ -35,6 +35,8 @@ const PersonalForm = () => {
           name="income"
           value={formData.income}
           onChange={handleChange}
+          min="0"
+          max="10"
           required
         />
       </label>
