@@ -1,0 +1,23 @@
+.personal__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4vh;
+}
+
+.income__wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 3vw;
+}
+
+.income__input {
+    border-radius: 3px;
+    border: 1px solid var(--color-gray-100);
+}
+
+.email__input {
+    border-radius: 3px;
+    border: 1px solid var(--color-gray-100);
+}
