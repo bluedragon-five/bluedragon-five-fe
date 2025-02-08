@@ -60,3 +60,20 @@ React, Javascript
 4. 깃허브에서 PR(feat/{구현하고자 하는 기능} -> main) 생성
 5. 리뷰어로 상대 개발자 설정
 6. 상대 리뷰어가 보고 Merge 버튼 클릭 : 어떤 부분을 어떻게 구현했는 지 인지하기 위함
+
+## 🔡 실행 방법
+### 0. 환경 설정
+
+- npm 버전 : 10.9.2
+
+```bash
+git clone https://github.com/bluedragon-five/bluedragon-five-fe.git
+cd bluedragon-five-fe
+npm install
+```
+
+### 1. 실행
+
+```bash
+npm run dev
+```
