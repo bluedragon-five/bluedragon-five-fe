@@ -10,7 +10,6 @@
 
 .BoldL {
   font-size: 24px;
-  font-weight: bold;
   text-align: left;
   margin-left: 30px;
   margin-top: 20px;
@@ -31,7 +30,6 @@ p {
 p strong {
   width: 120px; /* 모든 strong 태그의 크기를 동일하게 설정 */
   text-align: center; /* ✅ strong 내부 텍스트 중앙 정렬 */
-  font-weight: bold;
 }
 
 /* ✅ span 태그를 같은 위치에서 시작하도록 정렬 */
@@ -39,7 +37,7 @@ p .highlight {
   flex-grow: 1; /* 나머지 공간을 모두 차지하게 만듦 */
   text-align: left; /* ✅ span 내부 텍스트 왼쪽 정렬 */
   padding-left: 10px; /* ✅ 들여쓰기 조절 */
-  color: blue;
+  color: var(--color-primary);
 }
 
 .edit-button {
@@ -47,15 +45,8 @@ p .highlight {
   margin-top: 20px;
   padding: 0px 20px;
   font-size: 18px;
-  color: blue;
+  color: var(--color-primary);
   background: none;
   border: none;
   cursor: pointer;
-}
-
-.edit-message {
-  font-size: 16px;
-  color: green;
-  margin-top: 10px;
-  font-weight: bold;
 }
