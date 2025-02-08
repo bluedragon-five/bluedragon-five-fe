@@ -2,11 +2,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 3vw;
 }
 
 .searching__input {
     border-radius: 10px;
     border: 1px solid var(--color-black);
-    width: 80vw;
+    width: 50vw;
     height: 5vh;
+}
+
+.searching__btn {
+  width: 5vw;
+  height: 5vh;
+  background-color: white;
+  border: 1px solid var(--color-black);
+}
+
+.searching__icon{
+  width: 2vw;
+  height: 2vh;
 }

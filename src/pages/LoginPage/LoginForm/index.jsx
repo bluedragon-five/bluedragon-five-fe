@@ -15,7 +15,7 @@ const LoginForm = () => {
 
     if (result) {
       alert('로그인 성공')
-      navigate('/main')
+      navigate('/main', { state: { userId: result.userId } })
     } else {
       alert('로그인에 실패했습니다.')
     }
