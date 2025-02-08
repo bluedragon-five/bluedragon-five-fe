@@ -1,0 +1,12 @@
+.searching__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searching__input {
+    border-radius: 10px;
+    border: 1px solid var(--color-black);
+    width: 80vw;
+    height: 5vh;
+}
