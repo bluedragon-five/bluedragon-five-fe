@@ -3,11 +3,11 @@ import './style.css';
 
 const LoginForm = () => {
   return (
-    <form className="LoginForm">
-      <input type="text" placeholder="ID" />
-      <input type="password" placeholder="PW" />
-      <button type="submit">로그인</button>
-      <button type="button">회원가입</button>
+    <form className="login__form">
+      <input className="BoldS" type="text" placeholder="ID" />
+      <input className="BoldS" type="password" placeholder="PW" />
+      <button className="BodyS" type="submit">로그인</button>
+      <button className="BodyS" type="button">회원가입</button>
     </form>
   );
 };
