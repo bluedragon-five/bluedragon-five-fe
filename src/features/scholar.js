@@ -21,6 +21,7 @@ export const fetchScholarships = async ({section=0, attendance=true, grade=4, ty
     }
 
     const result = data.scholarships
+    console.log(result)
 
     return result.map(scholar => new ScholarResponseDTO(scholar.name, scholar.money, scholar.remainDays, scholar.redirectURL))
   } catch (error) {

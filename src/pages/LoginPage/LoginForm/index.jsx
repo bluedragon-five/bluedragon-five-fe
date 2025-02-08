@@ -13,7 +13,7 @@ const LoginForm = () => {
     e.preventDefault()
     const result = await login(id, password)
 
-    if (result) {
+    if (result.success) {
       alert('로그인 성공')
       navigate('/main', { state: { userId: result.userId } })
     } else {
