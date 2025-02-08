@@ -4,9 +4,9 @@ import "./style.css"
 const LoginPage = () => {
   return (
     <div className="LoginPage">
-      <h1>Five Guys</h1>
+      <h1 className="BoldL">Five Guys</h1>
       <LoginForm />
-      <small>Five Guys</small>
+      <small className="BodyS">Five Guys</small>
     </div>
   )
 }
