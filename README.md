@@ -87,6 +87,7 @@
 
 
 [PPT](https://www.miricanvas.com/ko/v/147p5wr)
+[시연 영상](https://www.youtube.com/watch?v=n_Jucu-UgRU)
 
 ## 🎋 Merge 전략
 - README나 package.json이 바뀌면 main에서 푸쉬하고, 상대에게 알려주는 방식으로..
