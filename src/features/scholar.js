@@ -6,8 +6,7 @@ export const fetchScholarships = async ({section=0, attendance=true, grade=4, ty
   try {
     const requestData = new ScholarRequestDTO(section, attendance, grade, type, major, sortCondition)
     const requestURL = API_BASE_URL + '/api/scholarship'
-    console.log(requestData) 
-
+    
     const response = await fetch(requestURL, {
       method: 'POST',
       headers: API_BASE_HEADERS,
@@ -21,7 +20,6 @@ export const fetchScholarships = async ({section=0, attendance=true, grade=4, ty
     }
 
     const result = data.scholarships
-    console.log(result)
 
     return result.map(scholar => new ScholarResponseDTO(scholar.name, scholar.money, scholar.remainDays, scholar.redirectUrl))
   } catch (error) {

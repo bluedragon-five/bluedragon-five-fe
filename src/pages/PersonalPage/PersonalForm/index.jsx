@@ -1,89 +1,103 @@
 import { useState } from "react";
+import { updateUserInfo } from "../../../features/user"; // ✅ API 요청 함수 임포트
 import "./style.css";
+import { useNavigate, useLocation } from "react-router-dom";
 
-const PersonalForm = () => {
-  const [formData, setFormData] = useState({
-    income: "",
-    email: "",
-    charac: "",
-    lesson: "",
-    enrollment: "",
-    grade: "",
-  });
+const PersonalForm = () => { 
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [email, setEmail] = useState("");
+  const [section, setSection] = useState(0);
+  const [type, setType] = useState("NOTHING");
+  const [major, setMajor] = useState("NOTHING");
+  const [attendance, setAttendance] = useState(true);
+  const [grade, setGrade] = useState(4);
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("입력된 개인정보:", formData);
-    alert("개인정보가 제출되었습니다!");
+
+    const formData = {
+      email,
+      section: Number(section),
+      type,
+      major,
+      attendance,
+      grade: Number(grade),
+    };
+
+    try {
+      const userId = location.state.userId | 1
+      const response = await updateUserInfo(userId, formData);
+      console.log(response)
+      alert("개인정보 수정을 성공하였습니다.")
+      navigate("/main", {state: {userId : userId}})
+    } catch (err) {
+      alert("개인정보 수정을 실패하였습니다.")
+    }
   };
 
   return (
     <form className="personal__form" onSubmit={handleSubmit}>
-      
-        <label className="BodyR">
-          <div className="income__wrapper">
-            이메일
-            <input
-              className="income__input"
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-        </label>
+      <label className="BodyR">
+        <div className="income__wrapper">
+          이메일
+          <input
+            className="income__input"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+      </label>
 
-      {/* 🔹 소득분위 (숫자 입력) */}
-      <label>
-        소득분위:
-        <input
-          type="number"
-          name="income"
-          value={formData.income}
-          onChange={handleChange}
-          min="0"
-          max="10"
-          required
-        />
+      <label className="BodyR">
+        <div className="income__wrapper">
+          소득 분위
+          <select className="select__input BoldR" value={section} onChange={(e) => setSection(Number(e.target.value))} required>
+            <option value="0">0분위</option>
+            <option value="1">1분위</option>
+            <option value="2">2분위</option>
+            <option value="3">3분위</option>
+            <option value="4">4분위</option>
+            <option value="5">5분위</option>
+            <option value="6">6분위</option>
+            <option value="7">7분위</option>
+            <option value="8">8분위</option>
+            <option value="9">9분위</option>
+            <option value="10">10분위</option>
+          </select>
+        </div>
       </label>
 
       <label className="BodyR">
         <div className="income__wrapper">
           특성
-          <select className='select__input BoldR' name="charac" value={formData.charac} onChange={handleChange} required>
-            <option value="">선택하세요</option> 
-            <option value="생활비">생활비</option>
-            <option value="등록금">등록금</option>
+          <select className="select__input BoldR" value={type} onChange={(e) => setType(e.target.value)} required>
+            <option value="NOTHING">선택하세요</option> 
+            <option value="LIVING">생활비</option>
+            <option value="ENROLLMENT">등록금</option>
           </select>
         </div>
       </label>
 
       <label className="BodyR">
         <div className="income__wrapper">
-          개별
-          <select className="select__input BoldR" name="lesson" value={formData.lesson} onChange={handleChange} required>
-            <option value="">선택하세요</option> 
-            <option value="이공계">이공계</option>
-            <option value="인문계">인문계</option>
+          전공계열
+          <select className="select__input BoldR" value={major} onChange={(e) => setMajor(e.target.value)} required>
+            <option value="NOTHING">선택하세요</option> 
+            <option value="SCIENCE">이공계</option>
+            <option value="HUMANITIES">인문계</option>
           </select>
         </div>
       </label>
-      
-      <label className="BodyR" >
+
+      <label className="BodyR">
         <div className="income__wrapper">
           재학 여부
-          <select className="select__input BoldR" name="enrollment" value={formData.enrollment} onChange={handleChange} required>
-            <option value="">선택하세요</option> 
-            <option value="재학중">재학중</option>
-            <option value="휴학중">휴학중</option>
+          <select className="select__input BoldR" value={attendance} onChange={(e) => setAttendance(e.target.value === "true")} required>
+            <option value="true">재학중</option>
+            <option value="false">휴학중</option>
           </select>
         </div>
       </label>
@@ -91,17 +105,17 @@ const PersonalForm = () => {
       <label className="BodyR">
         <div className="income__wrapper">
           학년  
-          <select className="select__input BoldR" name="grade" defaultValue="" value={formData.grade} onChange={handleChange} required>
-            <option value="">선택하세요</option> 
-            <option value="1학년">1학년</option>
-            <option value="2학년">2학년</option>
-            <option value="3학년">3학년</option>
-            <option value="4학년">4학년</option>
+          <select className="select__input BoldR" value={grade} onChange={(e) => setGrade(Number(e.target.value))} required>
+            <option value="1">1학년</option>
+            <option value="2">2학년</option>
+            <option value="3">3학년</option>
+            <option value="4">4학년</option>
           </select>
         </div>
       </label>
 
-      <button className="BoldR" type="submit">제출</button>
+      <button className="BoldR" type="submit"> 제출
+      </button>
     </form>
   );
 };
