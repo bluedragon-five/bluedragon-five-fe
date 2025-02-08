@@ -6,3 +6,18 @@
     gap: 5vh;
     background-color: color(--color-white)
 }
+
+.user__info__btn {
+    position: fixed;
+    top: 5vh;
+    right: 5vw;
+    height: 5vh;
+    width: 5vw;
+    background: transparent;
+    cursor: pointer;
+}
+
+.user-icon {
+    height: 50px;
+    width: 50px;
+}

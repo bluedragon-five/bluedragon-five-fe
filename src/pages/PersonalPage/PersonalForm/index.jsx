@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./style.css";
 
 const PersonalForm = () => {
   const [formData, setFormData] = useState({
@@ -24,8 +25,21 @@ const PersonalForm = () => {
   };
 
   return (
-    <form className="PersonalForm" onSubmit={handleSubmit}>
-      <h2>개인정보 입력</h2>
+    <form className="personal__form" onSubmit={handleSubmit}>
+      
+        <label className="BodyR">
+          <div className="income__wrapper">
+            소득분위
+            <input
+              className="income__input"
+              type="number"
+              name="income"
+              value={formData.income}
+              onChange={handleChange}
+              required
+            />
+          </div>
+        </label>
 
       {/* 🔹 소득분위 (숫자 입력) */}
       <label>
@@ -41,61 +55,53 @@ const PersonalForm = () => {
         />
       </label>
 
-      {/* 🔹 이메일 입력 */}
-      <label>
-        이메일:
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
+      <label className="BodyR">
+        <div className="income__wrapper">
+          특성
+          <select className='select__input BoldR' name="charac" value={formData.charac} onChange={handleChange} required>
+            <option value="">선택하세요</option> 
+            <option value="생활비">생활비</option>
+            <option value="등록금">등록금</option>
+          </select>
+        </div>
       </label>
 
-      {/* 🔹 특성 (드롭다운) */}
-      <label>
-        특성:
-        <select name="charac" value={formData.charac} onChange={handleChange} required>
-          <option value="">선택하세요</option> 
-          <option value="생활비">생활비</option>
-          <option value="등록금">등록금</option>
-        </select>
+      <label className="BodyR">
+        <div className="income__wrapper">
+          개별
+          <select className="select__input BoldR" name="lesson" value={formData.lesson} onChange={handleChange} required>
+            <option value="">선택하세요</option> 
+            <option value="이공계">이공계</option>
+            <option value="인문계">인문계</option>
+          </select>
+        </div>
+      </label>
+      
+      <label className="BodyR" >
+        <div className="income__wrapper">
+          재학 여부
+          <select className="select__input BoldR" name="enrollment" value={formData.enrollment} onChange={handleChange} required>
+            <option value="">선택하세요</option> 
+            <option value="재학중">재학중</option>
+            <option value="휴학중">휴학중</option>
+          </select>
+        </div>
       </label>
 
-      {/* 🔹 개별 (드롭다운) */}
-      <label>
-        개별:
-        <select name="lesson" value={formData.lesson} onChange={handleChange} required>
-          <option value="">선택하세요</option> 
-          <option value="이공계">이공계</option>
-          <option value="인문계">인문계</option>
-        </select>
+      <label className="BodyR">
+        <div className="income__wrapper">
+          학년  
+          <select className="select__input BoldR" name="grade" defaultValue="" value={formData.grade} onChange={handleChange} required>
+            <option value="">선택하세요</option> 
+            <option value="1학년">1학년</option>
+            <option value="2학년">2학년</option>
+            <option value="3학년">3학년</option>
+            <option value="4학년">4학년</option>
+          </select>
+        </div>
       </label>
 
-      {/* 🔹 재학 여부 (드롭다운) */}
-      <label>
-        재학 여부:
-        <select name="enrollment" value={formData.enrollment} onChange={handleChange} required>
-          <option value="">선택하세요</option> 
-          <option value="재학중">재학중</option>
-          <option value="휴학중">휴학중</option>
-        </select>
-      </label>
-
-      {/* 🔹 학년 (드롭다운) */}
-      <label>
-        학년:
-        <select name="grade" value={formData.grade} onChange={handleChange} required>
-          <option value="">선택하세요</option> 
-          <option value="1학년">1학년</option>
-          <option value="2학년">2학년</option>
-          <option value="3학년">3학년</option>
-          <option value="4학년">4학년</option>
-        </select>
-      </label>
-
-      <button type="submit">제출</button>
+      <button className="BoldR" type="submit">제출</button>
     </form>
   );
 };
