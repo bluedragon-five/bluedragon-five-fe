@@ -1,0 +1,39 @@
+.signup__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+  
+.signup__form input {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 5px 0;
+  width: 200px;
+}
+  
+.signup__form button {
+  padding: 10px;
+  margin: 5px 0;
+  width: 220px;
+}
+
+button {
+  display: flex;
+  background: var(--color-primary);
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+  height: 40px;
+  padding: 8px 16px;
+  gap: 10px;
+  border-radius: 8px;
+  border: 0px;
+  cursor: pointer;
+}
+
+/* 글자 색깔은 흰색으로 */
+button {
+  color: white;
+}

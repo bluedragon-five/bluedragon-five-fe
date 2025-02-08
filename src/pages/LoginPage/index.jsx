@@ -3,7 +3,7 @@ import "./style.css"
 
 const LoginPage = () => {
   return (
-    <div className="LoginPage">
+    <div className="login__page">
       <h1 className="BoldL">Five Guys</h1>
       <LoginForm />
       <small className="BodyS">Five Guys</small>
