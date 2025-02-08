@@ -1,4 +1,4 @@
-.login__page {
+.signup__page {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,8 +6,4 @@
   height: 100vh;
   text-align: center;
   gap: 10px;
-}
-
-small {
-  color: var(--color-gray-200);  
 }
