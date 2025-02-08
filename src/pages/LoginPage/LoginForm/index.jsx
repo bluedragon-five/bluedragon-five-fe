@@ -15,8 +15,7 @@ const LoginForm = () => {
 
     if (result) {
       alert('로그인 성공')
-      // reload
-      window.location.reload()
+      navigate('/main')
     } else {
       alert('로그인에 실패했습니다.')
     }
