@@ -1,24 +1,23 @@
 import { useState } from 'react'
 import './style.css'
+import { register } from '../../../features/user'
+import { useNavigate } from 'react-router-dom'
 
 const SignupForm = () => {
-  const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    password: '',
-  })
+  const navigate = useNavigate()
+  const [userId, setUserId] = useState('')
+  const [password, setPassword] = useState('')
 
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }))
-  }
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault()
-    console.log('회원가입 정보:', formData)
+    const result = await register(userId, password)
+
+    if (result) {
+      alert('회원가입 성공')
+      navigate('/main')
+    } else {
+      alert('회원가입에 실패했습니다.')
+    }
   }
 
   return (
@@ -28,8 +27,8 @@ const SignupForm = () => {
         type="text"
         name="username"
         placeholder="아이디"
-        value={formData.username}
-        onChange={handleChange}
+        value={userId}
+        onChange={(e) => setUserId(e.target.value)}
         required
       />
       <input
@@ -37,8 +36,8 @@ const SignupForm = () => {
         type="password"
         name="password"
         placeholder="비밀번호"
-        value={formData.password}
-        onChange={handleChange}
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
         required
       />
       <button className="BodyS" type="submit">가입하기</button>
