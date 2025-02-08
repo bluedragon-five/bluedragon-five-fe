@@ -1,4 +1,4 @@
-import { LoginRequestDTO, LoginResponseDTO, SignupRequestDTO } from "../entities/userDTO"
+import { LoginRequestDTO, LoginResponseDTO, SignupRequestDTO, ModifyRequestDTO} from "../entities/userDTO"
 import { API_BASE_URL, API_BASE_HEADERS } from "../shared/constant"
 
 // 로그인 API 요청 함수
@@ -100,5 +100,30 @@ export const getUserInfo = async (userId) => {
   } catch (error) {
     console.error('개인정보 조회 오류:', error)
     return { success: false, message: '서버 오류 발생' }
+  }
+}
+
+export const updateUserInfo = async (userId, updatedInfo) => {
+  try {
+    const requestURL = API_BASE_URL + `/api/user/info?userId=${userId}`
+    console.log(updatedInfo)
+    
+    const response = await fetch(requestURL, {
+      method: 'POST',
+      headers: API_BASE_HEADERS,
+      body: JSON.stringify(updatedInfo),
+    })
+
+    const data = await response.json()
+    console.log(data)
+
+    if (!response.ok) {
+      return { success: false, message: data.message }
+    }
+
+    return { success: true, ...data }
+  } catch (error) {
+    console.error('개인정보 수정 오류:', error)
+    return { success: false, message: error }
   }
 }
