@@ -58,7 +58,7 @@ const PersonalForm = () => {
       <label className="BodyR">
         <div className="income__wrapper">
           특성
-          <select className='BoldR' name="charac" value={formData.charac} onChange={handleChange} required>
+          <select className='select__input BoldR' name="charac" value={formData.charac} onChange={handleChange} required>
             <option value="">선택하세요</option> 
             <option value="생활비">생활비</option>
             <option value="등록금">등록금</option>
@@ -69,7 +69,7 @@ const PersonalForm = () => {
       <label className="BodyR">
         <div className="income__wrapper">
           개별
-          <select className="BoldR" name="lesson" value={formData.lesson} onChange={handleChange} required>
+          <select className="select__input BoldR" name="lesson" value={formData.lesson} onChange={handleChange} required>
             <option value="">선택하세요</option> 
             <option value="이공계">이공계</option>
             <option value="인문계">인문계</option>
@@ -80,7 +80,7 @@ const PersonalForm = () => {
       <label className="BodyR" >
         <div className="income__wrapper">
           재학 여부
-          <select className="BoldR" name="enrollment" value={formData.enrollment} onChange={handleChange} required>
+          <select className="select__input BoldR" name="enrollment" value={formData.enrollment} onChange={handleChange} required>
             <option value="">선택하세요</option> 
             <option value="재학중">재학중</option>
             <option value="휴학중">휴학중</option>
@@ -91,7 +91,7 @@ const PersonalForm = () => {
       <label className="BodyR">
         <div className="income__wrapper">
           학년  
-          <select className="BoldR" name="grade" defaultValue="" value={formData.grade} onChange={handleChange} required>
+          <select className="select__input BoldR" name="grade" defaultValue="" value={formData.grade} onChange={handleChange} required>
             <option value="">선택하세요</option> 
             <option value="1학년">1학년</option>
             <option value="2학년">2학년</option>

@@ -9,15 +9,28 @@
 .income__wrapper {
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 3vw;
 }
 
 .income__input {
-    border-radius: 3px;
     border: 1px solid var(--color-gray-100);
+    border-radius: 8px;
+    padding: 10px;
+    margin: 5px 0;
+    width: 200px;
 }
 
 .email__input {
-    border-radius: 3px;
     border: 1px solid var(--color-gray-100);
+    border-radius: 8px;
+    padding: 10px;
+    margin: 5px 0;
+    width: 200px;
+}
+
+.select__input {
+    padding: 10px;
+    margin: 5px 0;
+    width: 200px;
 }
