@@ -4,11 +4,11 @@
     flex-direction: column;
     align-items: center;
     gap: 5vh;
-    background-color: color(--color-white)
+    background-color: color(--color-white);
 }
 
 .user__info__btn {
-    position: fixed;
+    position: absolute;
     top: 5vh;
     right: 5vw;
     height: 5vh;
