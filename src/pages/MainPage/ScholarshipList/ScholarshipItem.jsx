@@ -10,7 +10,7 @@ const ScholarshipItem = ({scholarship}) => {
         <p className="BoldR">D - {scholarship.remainDays}</p>
       </div>
       <a href={scholarship.redirectUrl} className="scholarship__apply-btn BoldR" target="_blank">
-        신청하기
+        자세히 보기
       </a>
     </div>
   )
