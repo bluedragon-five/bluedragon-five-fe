@@ -2,7 +2,6 @@ import React from 'react'
 import './style.css'
 
 const ScholarshipItem = ({scholarship}) => {
-  console.log(scholarship)
   return (
     <div className="scholarship__item">
       <h3 className="DisplayR">{scholarship.name}</h3>

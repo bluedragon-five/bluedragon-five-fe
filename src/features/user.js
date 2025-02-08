@@ -19,7 +19,7 @@ export const login = async (id, password) => {
       return new LoginResponseDTO(false, data.message)
     }
 
-    return new LoginResponseDTO(true, '로그인 성공', data.userId)
+    return new LoginResponseDTO(true, '로그인 성공', data.id)
   } catch (error) {
     console.error('로그인 오류:', error)
     return new LoginResponseDTO(false, '서버 오류 발생')
@@ -39,13 +39,12 @@ export const register = async (id, password) => {
     })
 
     const data = await response.json()
-    console.log(data)
 
     if (!response.ok) {
       return { success: false, message: data.message }
     }
 
-    return { success: true, id: '1' }
+    return { success: true, data: data}
   } catch (error) {
     console.error('회원가입 오류:', error)
     return { success: false, message: '서버 오류 발생' }
@@ -106,7 +105,6 @@ export const getUserInfo = async (userId) => {
 export const updateUserInfo = async (userId, updatedInfo) => {
   try {
     const requestURL = API_BASE_URL + `/api/user/info?userId=${userId}`
-    console.log(updatedInfo)
     
     const response = await fetch(requestURL, {
       method: 'POST',
@@ -115,8 +113,7 @@ export const updateUserInfo = async (userId, updatedInfo) => {
     })
 
     const data = await response.json()
-    console.log(data)
-
+    
     if (!response.ok) {
       return { success: false, message: data.message }
     }
