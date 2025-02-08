@@ -8,10 +8,7 @@ const ScholarshipList = ({ scholarships }) => {
       {scholarships.length > 0 ? (
         scholarships.map(scholarship => (
           <ScholarshipItem
-            key={scholarship.id}
-            name={scholarship.name}
-            amount={scholarship.amount}
-            eligibility={scholarship.eligibility}
+            scholarship={scholarship}
           />
         ))
       ) : (

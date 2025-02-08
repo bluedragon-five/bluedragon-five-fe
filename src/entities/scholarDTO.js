@@ -10,10 +10,10 @@ export class ScholarRequestDTO {
 }
 
 export class ScholarResponseDTO {
-    constructor(name, money, remainDays, redirectURL) {
+    constructor(name, money, remainDays, redirectUrl) {
         this.name = name
         this.money = money
         this.remainDays = remainDays
-        this.redirectURL = redirectURL
+        this.redirectUrl = redirectUrl
     }
 }

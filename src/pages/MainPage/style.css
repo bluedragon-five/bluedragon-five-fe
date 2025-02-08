@@ -8,7 +8,7 @@
 }
 
 .user__info__btn {
-    position: fixed;
+    position: absolute;
     top: 5vh;
     right: 5vw;
     height: 5vh;

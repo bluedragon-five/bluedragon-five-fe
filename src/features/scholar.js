@@ -23,7 +23,7 @@ export const fetchScholarships = async ({section=0, attendance=true, grade=4, ty
     const result = data.scholarships
     console.log(result)
 
-    return result.map(scholar => new ScholarResponseDTO(scholar.name, scholar.money, scholar.remainDays, scholar.redirectURL))
+    return result.map(scholar => new ScholarResponseDTO(scholar.name, scholar.money, scholar.remainDays, scholar.redirectUrl))
   } catch (error) {
     console.error('장학금 검색 오류:', error)
     return []
