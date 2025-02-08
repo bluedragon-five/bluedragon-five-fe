@@ -1,38 +1,61 @@
-.PersonalForm {
-  display: flex;
-  flex-direction: column;
+.VerifyPage {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
-  border: 1px solid #ddd;
   border-radius: 10px;
-  background: #f9f9f9;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  background: white;
+  text-align: center; /* ✅ 전체 중앙 정렬 */
 }
 
-.PersonalForm label {
-  margin-bottom: 10px;
+.BoldL {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 30px;
+  margin-top: 20px;
+  margin-bottom: 2px;
+}
+
+/* ✅ 각 항목을 flexbox로 정렬 */
+p {
+  display: flex;
+  justify-content: space-between; /* strong과 span 간격 조절 */
+  align-items: center;
+  font-size: 18px;
+  margin: 50px 50px;
+  text-align: left; /* 왼쪽 정렬 */
+}
+
+/* ✅ strong 태그를 중앙 정렬 */
+p strong {
+  width: 120px; /* 모든 strong 태그의 크기를 동일하게 설정 */
+  text-align: center; /* ✅ strong 내부 텍스트 중앙 정렬 */
   font-weight: bold;
 }
 
-.PersonalForm input,
-.PersonalForm select {
-  width: 100%;
-  padding: 8px;
-  margin: 5px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+/* ✅ span 태그를 같은 위치에서 시작하도록 정렬 */
+p .highlight {
+  flex-grow: 1; /* 나머지 공간을 모두 차지하게 만듦 */
+  text-align: left; /* ✅ span 내부 텍스트 왼쪽 정렬 */
+  padding-left: 10px; /* ✅ 들여쓰기 조절 */
+  color: blue;
 }
 
-.PersonalForm button {
-  margin-top: 10px;
-  padding: 10px;
-  background: #007bff;
-  color: white;
+.edit-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 0px 20px;
+  font-size: 18px;
+  color: blue;
+  background: none;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
 }
 
-.PersonalForm button:hover {
-  background: #0056b3;
+.edit-message {
+  font-size: 16px;
+  color: green;
+  margin-top: 10px;
+  font-weight: bold;
 }

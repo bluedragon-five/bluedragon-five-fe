@@ -3,7 +3,7 @@ import './App.css'
 import LoginPage from './pages/LoginPage'
 import SignupPage from './pages/SignupPage'
 import MainPage from './pages/MainPage'
-import PersonalPage from './pages/PersonalPage'
+import VerifyPage from './pages/VerifyPage'
 
 function App() {
   return (
@@ -11,8 +11,8 @@ function App() {
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
-        <Route path="/main" element={<MainPage />} />
-        <Route path="/info" element={<PersonalPage />} />
+        <Route path="/main" element={<MainPage />} /> {/* MainPage 추가 */}
+        <Route path="/verify" element={<VerifyPage />} />
       </Routes>
     </BrowserRouter>
   )

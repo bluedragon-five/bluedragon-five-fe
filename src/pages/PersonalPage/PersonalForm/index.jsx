@@ -41,18 +41,18 @@ const PersonalForm = () => {
           </div>
         </label>
 
-      <label className="BodyR">
-        <div className="income__wrapper">
-          이메일
-          <input
-            className="email__input"
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
+      {/* 🔹 소득분위 (숫자 입력) */}
+      <label>
+        소득분위:
+        <input
+          type="number"
+          name="income"
+          value={formData.income}
+          onChange={handleChange}
+          min="0"
+          max="10"
+          required
+        />
       </label>
 
       <label className="BodyR">
