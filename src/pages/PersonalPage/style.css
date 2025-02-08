@@ -1,38 +1,10 @@
-.PersonalForm {
+.personal__page {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  background: #f9f9f9;
-}
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
 
-.PersonalForm label {
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-.PersonalForm input,
-.PersonalForm select {
-  width: 100%;
-  padding: 8px;
-  margin: 5px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.PersonalForm button {
-  margin-top: 10px;
-  padding: 10px;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.PersonalForm button:hover {
-  background: #0056b3;
+  text-align: center;
+  gap: 10vh;
 }
