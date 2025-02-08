@@ -1,4 +1,23 @@
-# 2025 청룡톤 프론트엔드
+<div align="center">
+<h1> Scholar Link 🌟</h1>
+
+<img src="https://github.com/user-attachments/assets/7f3ddbf8-b081-43ac-ba42-1764a5b10f72" height="200px" width="200px">
+
+<h3> 장학과 학생을 잇다. </h3>
+
+<br>
+
+장학 정보를 찾기 힘드셨나요?
+
+나에게 맞는 장학 정보를 찾고 싶은신가요?
+
+장학금 정보, 더 이상 어렵지 않아요. 함께 찾아봐요! 🚀
+
+</br>
+
+</div>
+
+
 ## 👫 팀원 소개
 <markdown-accessiblity-table data-catalyst=""><table>
   <tbody>
@@ -54,6 +73,27 @@
  <img src="https://img.shields.io/badge/Vercel-000000?style=flat&logo=Vercel&logoColor=white">
 </p>
 
+<br>
+
+## 🔡 실행 방법
+### 0. 환경 설정
+
+- npm 버전 : 10.9.2
+
+```bash
+git clone https://github.com/bluedragon-five/bluedragon-five-fe.git
+cd bluedragon-five-fe
+npm install
+```
+
+### 1. 실행
+
+```bash
+npm run dev
+```
+
+<br>
+
 ## 📜 Figma(혹은 WireFrame)
 
 ### 회원가입
@@ -84,10 +124,9 @@
 ![Image](https://github.com/user-attachments/assets/81188137-cbc7-4f42-a402-41fb02f49e3c)
 
 
+[🔗 PPT](https://www.miricanvas.com/ko/v/147p5wr)
 
-
-[PPT](https://www.miricanvas.com/ko/v/147p5wr)
-[시연 영상](https://www.youtube.com/watch?v=n_Jucu-UgRU)
+[🔗 시연 영상](https://www.youtube.com/watch?v=n_Jucu-UgRU)
 
 ## 🎋 Merge 전략
 - README나 package.json이 바뀌면 main에서 푸쉬하고, 상대에게 알려주는 방식으로..
@@ -98,20 +137,3 @@
 4. 깃허브에서 PR(feat/{구현하고자 하는 기능} -> main) 생성
 5. 리뷰어로 상대 개발자 설정
 6. 상대 리뷰어가 보고 Merge 버튼 클릭 : 어떤 부분을 어떻게 구현했는 지 인지하기 위함
-
-## 🔡 실행 방법
-### 0. 환경 설정
-
-- npm 버전 : 10.9.2
-
-```bash
-git clone https://github.com/bluedragon-five/bluedragon-five-fe.git
-cd bluedragon-five-fe
-npm install
-```
-
-### 1. 실행
-
-```bash
-npm run dev
-```
